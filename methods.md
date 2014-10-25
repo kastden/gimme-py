@@ -29,11 +29,11 @@
 ### Follow/unfollow users
 	# Follow a user:
 	cmd = 'set_favorite_celebrity_insert'
-	celebrityCode = 'username'
+	celebrityCode = username
 #	
 	# Unfollow a user:
 	cmd = 'set_favorite_celebrity_delete'
-	celebrityCode = 'username'
+	celebrityCode = username
 #
 	# Get following list
 	cmd = 'get_favorite_celebrity_list'
@@ -45,7 +45,7 @@
 	# Retrieve information about the currently logged in user:
 	cmd = 'get_my_profile'
 #
-#### Change user information for the currently logged in user:
+	#Change user information for the currently logged in user:
 	cmd = 'set_user_profile_modify'
 	# Nickname, max 12 characters
 	nickname = 'ilovegown'

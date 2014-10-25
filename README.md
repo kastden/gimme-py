@@ -8,11 +8,11 @@ A Python library for the Gimme private API
 	>>> from gimme import GimmeRequest
 	
 	# Follow a user
-	>>> req = GimmeRequest(auth_token, cmd=set_favorite_celebrity_insert, celebrityCode='Soobin')
+	>>> req = GimmeRequest(auth_token, cmd='set_favorite_celebrity_insert', celebrityCode='Soobin')
 	>>> pprint(req)
 
 
-### Example convience functions usage
+### Example convenience methods usage
 
 	>>> from pprint import pprint
 	>>> from gimme import Gimme
@@ -23,9 +23,9 @@ A Python library for the Gimme private API
 	>>> feed = g.timeline(username='Kaeun')
 	>>> pprint(feed)
 
-	# Iterate over a timeline
-	>>> for feed in g.itimeline():
-	>>>     pprint(feed)
+	# Iterate over a usertimeline
+	>>> for message in g.itimeline():
+	>>>     pprint(message)
 
 ### Obtaining the authToken
 
