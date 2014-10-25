@@ -19,11 +19,12 @@ A Python library for the Gimme private API
 
 	>>> g = Gimme(auth_token)
 	
-	# Request a users timeline
+	# Request a user's timeline
 	>>> feed = g.timeline(username='Kaeun')
 	>>> pprint(feed)
 
-	# Iterate over a usertimeline
+	# Iterate over a timeline
+	# itimeline accepts the same arguments as the timeline method
 	>>> for message in g.itimeline():
 	>>>     pprint(message)
 
