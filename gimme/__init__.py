@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import json
-from pprint import pprint
 
 from gimme.api import GimmeRequest, GimmeCall
 from gimme.auth import GimmeAuth
@@ -34,17 +33,16 @@ class Gimme(object):
         else:
             kwargs['cmd'] = 'get_celebrity_timeline_list'
 
-        kwargs['type'] = str(int(type))
+        kwargs['type'] = str(type)
 
         if max_timestamp:
             kwargs['createdAt'] = max_timestamp
 
         return self.request(**kwargs)
 
-
     def itimeline(self, type=0, username=False, max_timestamp=False):
         """Like timeline(), except that it returns an generator and yields
-        feeds until there are no more messages to retrieve."""
+        messages until it hits an empty feed."""
 
         max_timestamp = max_timestamp
         while True:
@@ -55,7 +53,8 @@ class Gimme(object):
             if len(feed) == 0:
                 break
             else:
-                yield feed
+                for message in feed:
+                    yield message
                 max_timestamp = feed[-1]['createdAt']
 
     @property

@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import json
-from pprint import pprint
 from urllib.parse import quote
 
 import requests
@@ -76,7 +75,7 @@ def GimmeRequest(auth_token, **kwargs):
             repr(request.payload)))
 
     # The API returns a dictionary, but we want to wrap and return the
-    # the actual data returned, which can be either a list or dictionary.
+    # actual relevant data returned, which can be either a list or dictionary.
     data_keys = [k for k in data if k not in ('code')]
 
     # If the dictionary returned by the API for whatever reason has more than
