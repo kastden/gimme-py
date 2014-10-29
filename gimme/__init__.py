@@ -40,7 +40,7 @@ class Gimme(object):
 
         return self.request(**kwargs)
 
-    def itimeline(self, type=0, username=False, max_timestamp=False):
+    def itimeline(self, username=False, type=0, max_timestamp=False):
         """Like timeline(), except that it returns an generator and yields
         messages until it hits an empty feed."""
 
