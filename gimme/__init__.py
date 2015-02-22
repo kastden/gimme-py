@@ -52,10 +52,9 @@ class Gimme(object):
 
             if len(feed) == 0:
                 break
-            else:
-                for message in feed:
-                    yield message
-                max_timestamp = feed[-1]['createdAt']
+
+            yield feed
+            max_timestamp = feed[-1]['createdAt']
 
     @property
     def user_info(self):
