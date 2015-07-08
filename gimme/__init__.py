@@ -38,7 +38,9 @@ class Gimme(object):
         if max_timestamp:
             kwargs['createdAt'] = max_timestamp
 
-        return self.request(**kwargs)
+        response = self.request(**kwargs)
+        feed = response['list']
+        return feed
 
     def itimeline(self, username=False, type=0, max_timestamp=False):
         """Like timeline(), except that it returns an generator and yields
